@@ -7,6 +7,7 @@ class Account {
 
   deposit(amount) {
     this.balance += amount;
+    return this.balance;
   }
 
   withdraw(amount) {
