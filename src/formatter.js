@@ -10,13 +10,17 @@ function formatAmount(amount) {
   return ((amount === 0) ? ' ' : ` ${amount.toFixed(2)} `);
 }
 
+function formatBalance(amount) {
+  return ` ${amount.toFixed(2)} `;
+}
+
 function formatOutput(transactionHistory) {
   var output = headers;
   transactionHistory.forEach(function(transaction) {
     var singleTransaction = `${formatDate(transaction['date'])} ||\
 ${formatAmount(transaction['credit'])}||\
 ${formatAmount(transaction['debit'])}||\
-${formatAmount(transaction['balance'])}`;
+${formatBalance(transaction['balance'])}`;
     output += `\n${singleTransaction}`;
   });
   console.log(output);

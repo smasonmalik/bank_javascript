@@ -29,6 +29,15 @@ describe('Formatter', function() {
       expect(formatter.formatOutput(history)).toEqual(
         `date || credit || debit || balance\n${date} || 50.00 || || 50.00 `);
     });
+    it('formats transaction history to display output of two', function() {
+      let history = [{date: new Date(), credit: 50, debit: 0, balance: 50},
+        {date: new Date(), credit: 0, debit: 50, balance: 0}];
+      let date = new Date().toLocaleDateString('en-GB');
+      expect(formatter.formatOutput(history)).toEqual(
+        `date || credit || debit || balance\
+\n${date} || 50.00 || || 50.00 \
+\n${date} || || 50.00 || 0.00 `);
+    });
   });
 
 });
