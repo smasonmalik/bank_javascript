@@ -1,19 +1,13 @@
 'use strict';
 
 class Transaction {
-  constructor(deposit = 0, withdrawl = 0, newBalance) {
-    this.credit = deposit;
-    this.debit = withdrawl;
-    this.balance = newBalance;
-    this.date = new Date().toLocaleDateString();
+  constructor() {
     this.history = [];
   }
-  store() {
-    this.history.push({date: this.date,
-      credit: this.credit,
-      debit: this.debit,
-      balance: this.balance,
-    });
+
+  store(credit = 0, debit = 0, balance) {
+    this.history.push({date: new Date(), credit: credit,
+      debit: debit, balance: balance});
   }
 }
 module.exports = Transaction;

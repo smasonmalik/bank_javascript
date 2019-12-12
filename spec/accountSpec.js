@@ -1,6 +1,6 @@
 'use strict';
 
-var Account = require('../src/Account');
+var Account = require('../src/account');
 
 describe('Account', function() {
   var account;
