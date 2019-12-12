@@ -17,16 +17,13 @@ function formatBalance(amount) {
 function formatOutput(transactionHistory) {
   var output = headers;
   transactionHistory.forEach(function(transaction) {
-    var singleTransaction = `${formatDate(transaction['date'])} ||\
-${formatAmount(transaction['credit'])}||\
-${formatAmount(transaction['debit'])}||\
-${formatBalance(transaction['balance'])}`;
+    var singleTransaction = `${formatDate(transaction['date'])} ||` +
+                            `${formatAmount(transaction['credit'])}||` +
+                            `${formatAmount(transaction['debit'])}||` +
+                            `${formatBalance(transaction['balance'])}`;
     output += `\n${singleTransaction}`;
   });
-  console.log(output);
-
   return output;
-
 }
 
 module.exports.formatDate = formatDate;
