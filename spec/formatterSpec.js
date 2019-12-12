@@ -39,8 +39,8 @@ describe('Formatter', function() {
       let history = [transaction1, transaction2];
       expect(formatter.formatOutput(history)).toEqual(
         'date || credit || debit || balance' +
-        `\n${date} || 50.00 || || 50.00 ` +
-        `\n${date} || || 50.00 || 0.00 `);
+        `\n${date} || || 50.00 || 0.00 ` +
+        `\n${date} || 50.00 || || 50.00 `);
     });
   });
 

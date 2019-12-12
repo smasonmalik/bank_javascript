@@ -16,7 +16,7 @@ function formatBalance(amount) {
 
 function formatOutput(transactionHistory) {
   var output = headers;
-  transactionHistory.forEach(function(transaction) {
+  transactionHistory.reverse().forEach(function(transaction) {
     var singleTransaction = `${formatDate(transaction['date'])} ||` +
                             `${formatAmount(transaction['credit'])}||` +
                             `${formatAmount(transaction['debit'])}||` +

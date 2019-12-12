@@ -1,6 +1,6 @@
 'use strict';
 
-class Transaction {
+class Transactions {
   constructor() {
     this.history = [];
   }
@@ -10,4 +10,4 @@ class Transaction {
       debit: debit, balance: balance});
   }
 }
-module.exports = Transaction;
+module.exports = Transactions;
